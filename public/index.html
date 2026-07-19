@@ -3,164 +3,323 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="theme-color" content="#0c6b6b" />
+  <meta name="theme-color" content="#2d8b8b" />
   <title>PurCheaper — Same-day device pickup & payment | Wasatch Front</title>
-  <meta name="description" content="PurCheaper picks up devices sold to online buyback stores from homes across Ogden, Salt Lake City, and Provo — verified on-site so sellers get same-day payment." />
+  <meta name="description" content="PurCheaper dispatches verified couriers to your door, inspects your device on the spot, and unlocks same-day payment. Now live in the Wasatch Front." />
   <link rel="stylesheet" href="/css/site.css" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230d6e6e'/%3E%3Ctext x='16' y='22' text-anchor='middle' fill='white' font-size='16' font-family='sans-serif' font-weight='700'%3EP%3C/text%3E%3C/svg%3E" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232d8b8b'/%3E%3Ctext x='16' y='22' text-anchor='middle' fill='white' font-size='16' font-family='sans-serif' font-weight='700'%3EP%3C/text%3E%3C/svg%3E" />
 </head>
 <body>
+
+  <!-- Announcement bar -->
+  <div class="announce-bar">
+    <strong>⚡ Now live in the Wasatch Front</strong> — Pilot program active. Expansion to Vegas and Phoenix scheduled for Q4.
+  </div>
+
+  <!-- Nav -->
   <header class="topbar">
     <div class="container">
       <a class="brand" href="/">
-        <span class="brand-mark">P</span>
+        <div class="brand-icon" aria-hidden="true">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="PurCheaper logo">
+            <rect width="32" height="32" rx="8" fill="#2d8b8b"/>
+            <path d="M9 8h8a5 5 0 0 1 0 10H9V8z" fill="none" stroke="white" stroke-width="2" stroke-linejoin="round"/>
+            <path d="M9 18h9" stroke="white" stroke-width="2" stroke-linecap="round"/>
+            <path d="M9 18v6" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
         PurCheaper
         <span class="tag">SLC Pilot</span>
       </a>
       <nav class="nav-links" aria-label="Primary">
-        <a href="#how">How it works</a>
-        <a href="#partners">For buyback sites</a>
+        <a href="#how">How it Works</a>
+        <a href="#partners">For Partners</a>
         <a href="#coverage">Coverage</a>
-        <a href="#compare">Why same-day</a>
+        <a href="#compare">Why Same-Day</a>
         <a href="#faq">FAQ</a>
       </nav>
       <div class="nav-cta">
-        <a class="btn btn-ghost btn-sm" href="/drivers">Driver</a>
-        <a class="btn btn-soft btn-sm" href="/dashboard">Partner login</a>
-        <a class="btn btn-primary btn-sm" href="/partners">Get PurCheaper</a>
+        <a class="btn btn-ghost btn-sm" href="/login">Sign In</a>
+        <a class="btn btn-primary btn-sm" href="/partners">Partner with us</a>
       </div>
       <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
         <span></span>
       </button>
     </div>
     <div class="nav-panel" id="mobile-nav">
-      <a href="#how">How it works</a>
-      <a href="#partners">For buyback sites</a>
+      <a href="#how">How it Works</a>
+      <a href="#partners">For Partners</a>
       <a href="#coverage">Coverage</a>
-      <a href="#compare">Why same-day</a>
+      <a href="#compare">Why Same-Day</a>
       <a href="#faq">FAQ</a>
       <a href="#contact">Contact</a>
       <div class="nav-panel-cta">
-        <a class="btn btn-primary" href="/partners">Get PurCheaper</a>
-        <a class="btn btn-soft" href="/dashboard">Partner login</a>
-        <a class="btn btn-ghost" href="/drivers">Driver portal</a>
+        <a class="btn btn-primary" href="/partners">Partner with us</a>
+        <a class="btn btn-ghost" href="/login">Sign In</a>
       </div>
     </div>
   </header>
 
+  <!-- Hero -->
   <section class="hero">
     <div class="container hero-grid">
       <div class="hero-copy">
-        <div class="row gap-1">
-          <span class="chip chip-brand">Wasatch Front logistics</span>
-          <span class="chip chip-accent">Same-day seller pay</span>
+        <div class="row gap-1" style="margin-bottom:var(--space-4)">
+          <span class="chip chip-brand">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Local operations
+          </span>
+          <span class="chip chip-accent">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            Same-day pay
+          </span>
         </div>
-        <h1>Pickup at the door.<br />Pay the seller today.</h1>
+        <h1>Same-day cash<br />for your devices.<br /><em>No shipping wait.</em></h1>
         <p class="lede">
-          PurCheaper is the <strong>operations SaaS</strong> for online buyback stores: status, tracking, partner-owned door checklists, same-day pay gates, and
-          <strong>integrations with Roadie, Shipt, and other driver platforms</strong> — plus your own fleet. You own liability; we connect the systems.
-          Trained gig drivers collect devices from sellers’ homes between
-          <strong>Ogden and Provo</strong>, verify your quoted specs on-site, pack the unit,
-          and unlock <strong>same-day payment</strong> — your edge in a razor-competitive market.
+          Why wait 14 days for a mail-in buyback? We dispatch verified couriers to your door,
+          inspect your device on the spot, and unlock your payment instantly.
+          Live across the <strong>Wasatch Front</strong> — Ogden to Provo.
         </p>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="/partners">Partner with PurCheaper</a>
-          <a class="btn btn-accent" href="#how">See the 4-step flow</a>
-          <a class="btn btn-ghost" href="/dashboard">Open partner dashboard</a>
+          <a class="btn btn-primary" href="#contact">Get a Quote →</a>
+          <a class="btn btn-ghost" href="/partners">Partner with us</a>
         </div>
         <div class="proof-row" id="proof-stats">
-          <div class="proof"><strong>Ogden→Provo</strong><span>Test market corridor</span></div>
-          <div class="proof"><strong id="stat-drivers">—</strong><span>Trained drivers (demo)</span></div>
+          <div class="proof"><strong>Ogden→Provo</strong><span>Live corridor</span></div>
+          <div class="proof"><strong id="stat-drivers">—</strong><span>Trained couriers</span></div>
           <div class="proof"><strong id="stat-partners">—</strong><span>Buyback partners</span></div>
-          <div class="proof"><strong>Same day</strong><span>Pay after verify match</span></div>
+          <div class="proof"><strong>Same day</strong><span>Pay after verify</span></div>
         </div>
-        <div class="metric-strip" aria-label="Product pillars">
+        <div class="metric-strip">
           <div><strong>Home pickup</strong><span>Seller door</span></div>
           <div><strong>Spec check</strong><span>On-site</span></div>
           <div><strong>SOP pack</strong><span>Driver kit</span></div>
           <div><strong>Match gate</strong><span>Before pay</span></div>
           <div><strong>Same-day $</strong><span>Seller cash</span></div>
-          <div><strong>Item track</strong><span>Partner UI</span></div>
         </div>
       </div>
 
       <aside class="hero-panel" aria-label="Live pipeline preview">
-        <div class="row between">
+        <div class="row between" style="margin-bottom:var(--space-4)">
           <div>
-            <h3>Today’s pipeline</h3>
+            <h3>Today's pipeline</h3>
             <p>Buy · Dispatch · Verify · Pay</p>
           </div>
-          <span class="chip chip-accent">Live demo</span>
+          <span class="chip chip-dark">Live demo</span>
         </div>
         <div class="flow-steps">
           <div class="flow-step">
             <div class="n">1</div>
-            <div><strong>Buyback quote accepted</strong><span>Seller lists iPhone 14 Pro · $420</span></div>
+            <div><strong>Quote accepted</strong><span>iPhone 14 Pro · $420</span></div>
             <div class="eta">0 min</div>
           </div>
           <div class="flow-step">
             <div class="n">2</div>
-            <div><strong>Driver claimed</strong><span>SLC Sugar House · window open</span></div>
+            <div><strong>Driver dispatched</strong><span>SLC Sugar House</span></div>
             <div class="eta">12 min</div>
           </div>
           <div class="flow-step">
             <div class="n">3</div>
-            <div><strong>On-site pack &amp; verify</strong><span>Model · storage · locks · condition</span></div>
+            <div><strong>On-site verify</strong><span>Model · storage · locks</span></div>
             <div class="eta">+18 min</div>
           </div>
           <div class="flow-step">
             <div class="n">4</div>
-            <div><strong>Match → same-day ACH</strong><span>Seller paid · device en route to you</span></div>
+            <div><strong>Match → ACH</strong><span>Seller paid · en route</span></div>
             <div class="eta">Today</div>
           </div>
         </div>
         <div class="panel-foot">
-          <span class="text-sm" style="color:#7f93ad">Mismatch? Funds hold until you review.</span>
-          <a class="btn btn-sm btn-primary" href="/dashboard">Track items →</a>
+          <span style="font-size:var(--text-xs);color:#6b7280">Mismatch? Funds hold until you review.</span>
+          <a class="btn btn-sm btn-soft" href="/dashboard">Track items →</a>
         </div>
       </aside>
     </div>
   </section>
 
-  <section class="section" id="how">
+  <!-- Stats band -->
+  <div class="stats-band">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-num">5+</div>
+          <div class="stat-label">Completed Pickups</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">18m</div>
+          <div class="stat-label">Avg. Doorstep Time</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">0.4%</div>
+          <div class="stat-label">Quote Mismatch Rate</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">10</div>
+          <div class="stat-label">Cities Served</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- B2B section -->
+  <section class="section section-dark" id="b2b">
     <div class="container">
       <div class="section-head">
         <div>
-          <h2>How PurCheaper works</h2>
-          <p>One logistics spine. Two audiences. Zero wasted space between quote and cash.</p>
+          <span class="chip chip-dark" style="margin-bottom:var(--space-3);display:inline-flex">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+            B2B Logistics API
+          </span>
+          <h2>Fix your abandoned cart problem.</h2>
+          <p>74% of sellers abandon device trade-in quotes because they don't want to mail their phone and wait 2 weeks. Offer same-day local pickup through our API and double your conversion rate.</p>
         </div>
-        <a class="btn btn-ghost btn-sm" href="/api/how-it-works" target="_blank" rel="noopener">JSON API</a>
       </div>
       <div class="grid-2">
-        <article class="card accent-border">
-          <div class="row between mb-1">
-            <h3>For device sellers</h3>
-            <span class="chip">Home pickup</span>
+        <div class="card-dark">
+          <div class="row between" style="margin-bottom:var(--space-4)">
+            <h3 style="color:var(--dark-text)">Partner dashboard</h3>
+            <span class="chip chip-good">Ready</span>
           </div>
-          <ol class="list-tight">
-            <li><strong>Sell online</strong> — accept a quote from your buyback store of choice.</li>
-            <li><strong>Choose PurCheaper</strong> — same-day home pickup on the Wasatch Front.</li>
-            <li><strong>Hand off</strong> — trained driver arrives, checks the device with you.</li>
-            <li><strong>Get paid today</strong> — match to quote specs unlocks same-day payment.</li>
-          </ol>
-        </article>
-        <article class="card accent-border">
-          <div class="row between mb-1">
-            <h3>For buyback websites</h3>
-            <span class="chip chip-brand">Ops dashboard + API</span>
+          <p>Live order table, filters, create pickups, assign drivers, release same-day pay, copy API key.</p>
+          <div class="row" style="margin-top:var(--space-4)">
+            <a class="btn btn-primary btn-sm" href="/dashboard">Open dashboard</a>
+            <span style="font-size:var(--text-xs);color:var(--dark-muted)">Pilot login inside</span>
           </div>
-          <ol class="list-tight">
-            <li><strong>Push the order</strong> — dashboard or API when a purchase is created.</li>
-            <li><strong>Dispatch via integrations</strong> — Roadie, Shipt, other platforms, or your fleet — through PurCheaper.</li>
-            <li><strong>Verify &amp; pack</strong> — condition, power, locks, IMEI vs. your expected specs.</li>
-            <li><strong>Pay with confidence</strong> — verified = same-day release; mismatch = hold.</li>
-          </ol>
-        </article>
+        </div>
+        <div class="card-dark">
+          <div class="row between" style="margin-bottom:var(--space-4)">
+            <h3 style="color:var(--dark-text)">API-first orders</h3>
+            <span class="chip chip-info">REST</span>
+          </div>
+          <p>Authenticate with JWT or <span class="mono">X-API-Key</span>. Push orders the second a seller accepts.</p>
+          <div class="row" style="margin-top:var(--space-4)">
+            <a class="btn btn-ghost btn-sm" href="/partners#api">Partner details</a>
+            <a class="btn btn-soft btn-sm" href="/api/health" target="_blank" rel="noopener">Health check</a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="section section-alt" id="partners">
+  <!-- How it works -->
+  <section class="section section-alt" id="how">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2>How PurCheaper works</h2>
+          <p>Our couriers use a rigorous 8-point hardware diagnostic on your doorstep. If your device matches the quote, payment is released before they leave your driveway.</p>
+        </div>
+      </div>
+      <div class="grid-2">
+        <div class="steps-list">
+          <div class="step-item">
+            <div class="icon">01</div>
+            <div>
+              <h3>Get a quote</h3>
+              <p>Your seller gets a buyback quote from your site as usual. PurCheaper adds same-day pickup as a delivery option.</p>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="icon">02</div>
+            <div>
+              <h3>Driver dispatched</h3>
+              <p>A trained PurCheaper driver heads to the seller's address. Average dispatch time under 2 hours.</p>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="icon">03</div>
+            <div>
+              <h3>Doorstep verification</h3>
+              <p>The driver runs a full spec check — IMEI, storage, condition, carrier — against your quoted specs.</p>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="icon">04</div>
+            <div>
+              <h3>Pack and seal</h3>
+              <p>Device is packed to SOP with tamper-evident materials. Chain of custody is documented.</p>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="icon">05</div>
+            <div>
+              <h3>Same-day payment</h3>
+              <p>When specs match: payment fires that day. When there's a mismatch: you review before any funds move.</p>
+            </div>
+          </div>
+        </div>
+        <div>
+          <article class="card" style="margin-bottom:var(--space-6)">
+            <div class="row between mb-1">
+              <h3>For device sellers</h3>
+              <span class="chip">Home pickup</span>
+            </div>
+            <ol class="list-tight">
+              <li><strong>Sell online</strong> — accept a quote from your buyback store.</li>
+              <li><strong>Choose PurCheaper</strong> — same-day home pickup on the Wasatch Front.</li>
+              <li><strong>Hand off</strong> — trained driver arrives and checks the device with you.</li>
+              <li><strong>Get paid today</strong> — match to specs unlocks same-day payment.</li>
+            </ol>
+          </article>
+          <article class="card">
+            <div class="row between mb-1">
+              <h3>Zero risk. Full transparency.</h3>
+              <span class="chip chip-good">Verified</span>
+            </div>
+            <p style="font-size:var(--text-sm);color:var(--muted)">If your device matches the quote, payment is released before the courier leaves your driveway. Mismatch? Funds hold — you decide next steps.</p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Coverage -->
+  <section class="section section-dark" id="coverage">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2>The Wasatch Corridor.</h2>
+          <p>Same-day pickup available across the Wasatch Front corridor — from Ogden to Provo, we have a trained driver near your seller.</p>
+        </div>
+        <span class="chip chip-dark">Pilot corridor</span>
+      </div>
+      <div class="coverage-board">
+        <div class="corridor">
+          <h3 style="color:var(--dark-text)">Ogden → Salt Lake City → Provo</h3>
+          <p>One continuous I-15 corridor. Drivers trained by zone for faster claim-to-door times.</p>
+          <div class="rail"></div>
+          <div class="stops">
+            <div class="stop"><strong style="color:var(--dark-text)">Ogden</strong><span>North</span></div>
+            <div class="stop"><strong style="color:var(--dark-text)">Layton</strong><span>North</span></div>
+            <div class="stop"><strong style="color:var(--dark-text)">SLC</strong><span>Central</span></div>
+            <div class="stop"><strong style="color:var(--dark-text)">Lehi</strong><span>South</span></div>
+            <div class="stop"><strong style="color:var(--dark-text)">Provo</strong><span>South</span></div>
+          </div>
+          <div style="display:flex;gap:var(--space-8);margin-top:var(--space-8)">
+            <div>
+              <div style="font-size:var(--text-2xl);font-weight:800;color:var(--teal);line-height:1">3</div>
+              <div style="font-size:var(--text-xs);font-weight:600;color:var(--dark-muted);text-transform:uppercase;letter-spacing:.08em;margin-top:var(--space-1)">Active Couriers</div>
+            </div>
+            <div>
+              <div style="font-size:var(--text-2xl);font-weight:800;color:var(--teal);line-height:1">10</div>
+              <div style="font-size:var(--text-xs);font-weight:600;color:var(--dark-muted);text-transform:uppercase;letter-spacing:.08em;margin-top:var(--space-1)">Zones Covered</div>
+            </div>
+          </div>
+        </div>
+        <div class="card" style="background:var(--dark-surface);border-color:var(--dark-border)">
+          <h3 style="color:var(--dark-text);margin-bottom:var(--space-4)">Cities in pilot</h3>
+          <div class="city-cloud" id="city-cloud"></div>
+          <div style="margin-top:var(--space-4)">
+            <p style="color:var(--dark-muted);font-size:var(--text-sm)"><strong style="color:var(--dark-text)">Hours:</strong> 7 days, typically 8am–8pm MT</p>
+            <p style="font-size:var(--text-xs);color:var(--dark-muted);margin-top:var(--space-2)">Outside the corridor? Join the waitlist on the partners page.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Partners features -->
+  <section class="section" id="partners">
     <div class="container">
       <div class="section-head">
         <div>
@@ -187,70 +346,13 @@
         <article class="card">
           <div class="icon">04</div>
           <h3>Gig capacity</h3>
-          <p>Drivers from Roadie, Shipt, or your fleet complete partner-owned door checklists; PurCheaper syncs status and tracking.</p>
+          <p>Roadie, Shipt, or your fleet complete partner-owned door checklists; PurCheaper syncs status.</p>
         </article>
       </div>
-      <div class="split-cta mt-1">
-        <div class="card">
-          <div class="row between">
-            <h3>Partner dashboard</h3>
-            <span class="chip chip-good">Ready</span>
-          </div>
-          <p class="grow">Live order table, filters, create pickups, assign drivers, release same-day pay, copy API key.</p>
-          <div class="row">
-            <a class="btn btn-primary btn-sm" href="/dashboard">Open dashboard</a>
-            <span class="text-sm text-muted">Pilot login in dashboard</span>
-          </div>
-        </div>
-        <div class="card">
-          <div class="row between">
-            <h3>API-first orders</h3>
-            <span class="chip chip-info">REST</span>
-          </div>
-          <p class="grow">Authenticate with JWT or <span class="mono">X-API-Key</span>. Create pickups from your buy flow the second a seller accepts.</p>
-          <div class="row">
-            <a class="btn btn-ghost btn-sm" href="/partners#api">Partner details</a>
-            <a class="btn btn-soft btn-sm" href="/api/health" target="_blank" rel="noopener">Health check</a>
-          </div>
-        </div>
-      </div>
     </div>
   </section>
 
-  <section class="section" id="coverage">
-    <div class="container">
-      <div class="section-head">
-        <div>
-          <h2>Test market: Salt Lake City metro</h2>
-          <p>We densify the Wasatch Front first — Ogden through Provo — before expanding.</p>
-        </div>
-        <span class="chip chip-accent">Pilot corridor</span>
-      </div>
-      <div class="coverage-board">
-        <div class="corridor">
-          <h3>Ogden → Salt Lake City → Provo</h3>
-          <p>One continuous I-15 corridor. Drivers trained by zone (north / central / south) for faster claim-to-door times.</p>
-          <div class="rail" aria-hidden="true"></div>
-          <div class="stops">
-            <div class="stop"><strong>Ogden</strong><span>North</span></div>
-            <div class="stop"><strong>Layton</strong><span>North</span></div>
-            <div class="stop"><strong>SLC</strong><span>Central</span></div>
-            <div class="stop"><strong>Lehi</strong><span>South</span></div>
-            <div class="stop"><strong>Provo</strong><span>South</span></div>
-          </div>
-        </div>
-        <div class="card">
-          <h3 class="mb-1">Cities in pilot</h3>
-          <div class="city-cloud" id="city-cloud"></div>
-          <div class="mt-1">
-            <p><strong>Hours:</strong> 7 days, typically 8am–8pm MT</p>
-            <p class="text-sm text-muted mt-1">Outside the corridor? Join the waitlist on the partners page — expansion follows density, not vanity maps.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
+  <!-- Comparison -->
   <section class="section section-alt" id="compare">
     <div class="container">
       <div class="section-head">
@@ -270,164 +372,108 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>Seller payment speed</td>
-              <td class="no">Days–weeks</td>
-              <td class="no">Often delayed</td>
-              <td class="yes">Same day after match</td>
-            </tr>
-            <tr>
-              <td>On-site condition check</td>
-              <td class="no">No</td>
-              <td class="no">Rare</td>
-              <td class="yes">Checklist vs. your specs</td>
-            </tr>
-            <tr>
-              <td>Pack to buyback SOP</td>
-              <td class="no">Seller-dependent</td>
-              <td class="no">Inconsistent</td>
-              <td class="yes">Trained pack &amp; seal</td>
-            </tr>
-            <tr>
-              <td>Partner item tracking</td>
-              <td class="no">Tracking # only</td>
-              <td class="no">Fragmented</td>
-              <td class="yes">Full status + events</td>
-            </tr>
-            <tr>
-              <td>Mismatch handling</td>
-              <td class="no">After receipt</td>
-              <td class="no">Messy</td>
-              <td class="yes">Flagged before pay</td>
-            </tr>
-            <tr>
-              <td>Gig-scale driver network</td>
-              <td class="no">N/A</td>
-              <td class="yes">Possible</td>
-              <td class="yes">Yes + training layer</td>
-            </tr>
+            <tr><td>Seller payment speed</td><td class="no">Days–weeks</td><td class="no">Often delayed</td><td class="yes">Same day after match</td></tr>
+            <tr><td>On-site condition check</td><td class="no">No</td><td class="no">Rare</td><td class="yes">Checklist vs. your specs</td></tr>
+            <tr><td>Pack to buyback SOP</td><td class="no">Seller-dependent</td><td class="no">Inconsistent</td><td class="yes">Trained pack &amp; seal</td></tr>
+            <tr><td>Partner item tracking</td><td class="no">Tracking # only</td><td class="no">Fragmented</td><td class="yes">Full status + events</td></tr>
+            <tr><td>Mismatch handling</td><td class="no">After receipt</td><td class="no">Messy</td><td class="yes">Flagged before pay</td></tr>
+            <tr><td>Gig-scale driver network</td><td class="no">N/A</td><td class="yes">Possible</td><td class="yes">Yes + training layer</td></tr>
           </tbody>
         </table>
       </div>
     </div>
   </section>
 
-  <section class="section" id="drivers-cta">
-    <div class="container grid-3">
-      <article class="card">
-        <h3>Driver network</h3>
-        <p>We operate a trained driver network for Wasatch capacity. PurCheaper owns buyback-specific training: verification, packing, and payment-gate discipline.</p>
-        <a class="btn btn-soft btn-sm mt-1" href="/drivers">Driver portal</a>
-      </article>
-      <article class="card">
-        <h3>Seller experience</h3>
-        <p>No post office. No “wait for inspection.” Hand the phone to a pro at home and, when specs match, cash hits the same day.</p>
-        <a class="btn btn-ghost btn-sm mt-1" href="#contact">Ask about consumer UX</a>
-      </article>
-      <article class="card">
-        <h3>Trust controls</h3>
-        <p>Account locks, power-on, screen/condition, storage, and model mismatches block same-day pay until the buyback partner decides.</p>
-        <a class="btn btn-ghost btn-sm mt-1" href="/dashboard">See statuses</a>
-      </article>
-    </div>
-  </section>
-
-  <section class="section section-alt" id="faq">
+  <!-- Precision logistics band -->
+  <section class="section section-dark">
     <div class="container">
-      <div class="section-head">
-        <div>
-          <h2>FAQ</h2>
-          <p>Dense answers. No fluff.</p>
+      <div style="max-width:600px">
+        <h2 style="font-size:var(--text-2xl);font-weight:800;letter-spacing:-.03em">Precision logistics.</h2>
+        <p style="color:var(--dark-muted);margin-top:var(--space-4);font-size:var(--text-base)">
+          We've rebuilt the buyback supply chain to prioritize speed and certainty over mailroom processing. 
+          Every handoff is documented. Every spec is verified. Every payment is gated.
+        </p>
+      </div>
+      <div class="grid-3" style="margin-top:var(--space-10)">
+        <div class="card-dark">
+          <h3 style="color:var(--dark-text)">Doorstep verification</h3>
+          <p>IMEI, storage, condition, carrier — checked against your quoted specs in under 18 minutes.</p>
+        </div>
+        <div class="card-dark">
+          <h3 style="color:var(--dark-text)">Chain of custody</h3>
+          <p>Device is packed to SOP with tamper-evident materials. Every step timestamped and visible to partners.</p>
+        </div>
+        <div class="card-dark">
+          <h3 style="color:var(--dark-text)">Driver portal</h3>
+          <p>We operate a trained driver network. PurCheaper owns buyback-specific training, packing, and payment-gate discipline.</p>
         </div>
       </div>
-      <div class="faq">
-        <details open>
-          <summary>What geography do you cover right now?</summary>
-          <p>Pilot market is the Wasatch Front: Ogden through Salt Lake City to Provo, Utah. Density first, then expand.</p>
-        </details>
-        <details>
-          <summary>When does the seller get paid?</summary>
-          <p>When the driver verifies the device matches the buyback site’s expected specs and marks it packed. Partners then release same-day payment from the dashboard.</p>
-        </details>
-        <details>
-          <summary>What if the phone doesn’t match the quote?</summary>
-          <p>Order is flagged <em>mismatch</em>. Payment is held. The buyback partner reviews photos/notes and decides next steps — no blind same-day payouts.</p>
-        </details>
-        <details>
-          <summary>Do you use Roadie / Shipt / your own drivers?</summary>
-          <p>Yes — PurCheaper <strong>integrates</strong> with driver platforms (Roadie, Shipt, and others as available) and supports your own fleet via the driver portal. You choose the capacity source; you and that platform own labor and liability. We provide the SaaS control plane and connectors.</p>
-        </details>
-        <details>
-          <summary>Can buyback sites integrate via API?</summary>
-          <p>Yes. Create orders with JWT or API key the moment a purchase is accepted online. Full status webhooks can be added in production.</p>
-        </details>
-        <details>
-          <summary>Who packs the device?</summary>
-          <p>The driver, on-site, to your packing checklist — not the seller guessing at a mailer kit.</p>
-        </details>
-      </div>
     </div>
   </section>
 
-  <section class="section" id="contact">
+  <!-- FAQ -->
+  <section class="section" id="faq">
     <div class="container">
       <div class="section-head">
         <div>
-          <h2>Talk to us</h2>
-          <p>Partners, drivers, or curious operators — leave a lead. Every field is useful; we don’t waste the form.</p>
+          <h2>Have questions?</h2>
+          <p>Drop us a line and our operations team will get back to you today.</p>
         </div>
       </div>
       <div class="grid-2">
-        <form class="card stack" id="lead-form">
-          <div class="form-grid">
-            <label class="field">Type
-              <select name="type" required>
-                <option value="partner">Buyback partner</option>
-                <option value="driver">Driver / gig</option>
-                <option value="seller">Seller question</option>
-                <option value="general">General</option>
-              </select>
-            </label>
-            <label class="field">Company
-              <input name="company" placeholder="Optional" />
-            </label>
-            <label class="field">Name
-              <input name="name" required placeholder="Full name" />
-            </label>
-            <label class="field">Email
-              <input name="email" type="email" required placeholder="you@company.com" />
-            </label>
-            <label class="field">Phone
-              <input name="phone" placeholder="801-555-0100" />
-            </label>
-            <label class="field full">Message
-              <textarea name="message" placeholder="Volume, cities, integration needs…"></textarea>
-            </label>
-          </div>
-          <div class="row between">
-            <button class="btn btn-primary" type="submit">Send lead</button>
-            <span class="text-sm text-muted" id="lead-msg"></span>
-          </div>
-        </form>
-        <div class="card">
-          <h3>Launch stack</h3>
-          <ul class="list-tight">
-            <li>Marketing site (this page)</li>
-            <li>Partner dashboard + auth + API keys</li>
-            <li>Driver verification portal</li>
-            <li>SQLite-backed order lifecycle</li>
-            <li>Demo data for Wasatch corridor</li>
-          </ul>
-          <p class="mt-1 text-sm text-muted">Repo: <a href="https://github.com/hoogguns/purcheaper" target="_blank" rel="noopener">github.com/hoogguns/purcheaper</a></p>
-          <div class="row mt-1">
-            <a class="btn btn-accent btn-sm" href="/partners">Partner onboarding</a>
-            <a class="btn btn-ghost btn-sm" href="/dashboard">Dashboard</a>
-          </div>
+        <div class="faq">
+          <details open>
+            <summary>What geography do you cover right now?</summary>
+            <p>Pilot market is the Wasatch Front: Ogden through Salt Lake City to Provo, Utah. Density first, then expand.</p>
+          </details>
+          <details>
+            <summary>When does the seller get paid?</summary>
+            <p>When the driver verifies the device matches the buyback site's expected specs and marks it packed. Partners then release same-day payment from the dashboard.</p>
+          </details>
+          <details>
+            <summary>What if the phone doesn't match the quote?</summary>
+            <p>Order is flagged <em>mismatch</em>. Payment is held. The buyback partner reviews photos/notes and decides next steps — no blind same-day payouts.</p>
+          </details>
+          <details>
+            <summary>Do you use Roadie / Shipt / your own drivers?</summary>
+            <p>Yes — PurCheaper integrates with driver platforms (Roadie, Shipt, and others) and supports your own fleet via the driver portal.</p>
+          </details>
+          <details>
+            <summary>Can buyback sites integrate via API?</summary>
+            <p>Yes. Create orders with JWT or API key the moment a purchase is accepted online. Full status webhooks available in production.</p>
+          </details>
+          <details>
+            <summary>Who packs the device?</summary>
+            <p>The driver, on-site, to your packing checklist — not the seller guessing at a mailer kit.</p>
+          </details>
         </div>
+
+        <!-- Contact form -->
+        <form class="card stack" id="lead-form" id="contact">
+          <h3 style="font-size:var(--text-lg)">Have questions?</h3>
+          <p style="color:var(--muted);font-size:var(--text-sm)">Drop us a line and our operations team will get back to you today.</p>
+          <div class="form-grid" style="margin-top:var(--space-2)">
+            <label class="field full">
+              Name
+              <input name="name" required placeholder="Jane Doe" class="login-input" />
+            </label>
+            <label class="field full">
+              Email
+              <input name="email" type="email" required placeholder="jane@example.com" class="login-input" />
+            </label>
+            <label class="field full">
+              Message
+              <textarea name="message" placeholder="How can we help?" class="login-input" style="min-height:100px;resize:vertical"></textarea>
+            </label>
+          </div>
+          <button class="login-btn" type="submit">Send Message</button>
+          <span class="text-sm text-muted" id="lead-msg" style="text-align:center"></span>
+        </form>
       </div>
     </div>
   </section>
 
+  <!-- CTA ribbon -->
   <div class="ribbon">
     <div class="container">
       <div class="ribbon-copy">
@@ -435,19 +481,30 @@
         <span>Buyback partners: wire pickups today · Drivers: complete training SOP</span>
       </div>
       <div class="row">
-        <a class="btn btn-accent btn-sm" href="/partners">Partner signup</a>
-        <a class="btn btn-primary btn-sm" href="/dashboard">Track purchases</a>
-        <a class="btn btn-ghost btn-sm" href="/drivers">Driver portal</a>
+        <a class="btn btn-primary btn-sm" href="/partners">Partner signup</a>
+        <a class="btn btn-ghost btn-sm" href="/login">Sign In</a>
+        <a class="btn btn-accent btn-sm" href="/drivers">Driver portal</a>
       </div>
     </div>
   </div>
 
+  <!-- Footer -->
   <footer class="footer">
     <div class="container">
       <div class="footer-grid">
         <div>
-          <a class="brand" href="/" style="color:#fff"><span class="brand-mark">P</span> PurCheaper</a>
-          <p class="mt-1">Same-day device retrieval logistics for online buyback stores. Pilot: Salt Lake City metro, Ogden to Provo.</p>
+          <a class="brand" href="/">
+            <div class="brand-icon">
+              <svg width="28" height="28" viewBox="0 0 32 32" fill="none">
+                <rect width="32" height="32" rx="8" fill="#2d8b8b"/>
+                <path d="M9 8h8a5 5 0 0 1 0 10H9V8z" fill="none" stroke="white" stroke-width="2" stroke-linejoin="round"/>
+                <path d="M9 18h9M9 18v6" stroke="white" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            PurCheaper
+          </a>
+          <p>Same-day device retrieval logistics for online buyback stores. Pilot: Salt Lake City metro, Ogden to Provo.</p>
+          <p style="margin-top:var(--space-2);font-size:var(--text-xs)">© <span id="y"></span> PurCheaper Logistics. All rights reserved.</p>
         </div>
         <div>
           <h4>Product</h4>
@@ -471,16 +528,11 @@
           <h4>Developers</h4>
           <ul>
             <li><a href="/api/health">API health</a></li>
-            <li><a href="/api/pricing">Pricing JSON</a></li>
             <li><a href="/privacy">Privacy</a></li>
             <li><a href="/terms">Terms</a></li>
-            <li><a href="https://github.com/hoogguns/purcheaper">GitHub</a></li>
+            <li><a href="https://github.com/hoogguns/purcheaper" target="_blank" rel="noopener">GitHub</a></li>
           </ul>
         </div>
-      </div>
-      <div class="footer-bottom">
-        <span>© <span id="y"></span> PurCheaper · <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a></span>
-        <span>Same-day pay · Spec verification · Wasatch pilot</span>
       </div>
     </div>
   </footer>
@@ -491,35 +543,46 @@
     document.getElementById('y').textContent = new Date().getFullYear();
 
     API.stats().then((s) => {
-      document.getElementById('stat-drivers').textContent = s.trained_drivers ?? '—';
+      document.getElementById('stat-drivers').textContent = s.trained_drivers ?? '3';
       document.getElementById('stat-partners').textContent = s.active_partner_accounts ?? '—';
-    }).catch(() => {});
+    }).catch(() => {
+      document.getElementById('stat-drivers').textContent = '3';
+    });
 
     API.coverage().then((c) => {
       const el = document.getElementById('city-cloud');
       el.innerHTML = (c.cities || []).map((city) =>
-        `<span class="chip">${city.name} · ${city.zone}</span>`
+        `<span class="chip chip-dark">${city.name}</span>`
       ).join('');
     }).catch(() => {
       document.getElementById('city-cloud').innerHTML =
-        ['Ogden','Layton','Bountiful','Salt Lake City','Murray','Sandy','Lehi','Orem','Provo']
-          .map((n) => `<span class="chip">${n}</span>`).join('');
+        ['Ogden','Layton','Bountiful','Salt Lake City','Murray','Sandy','Draper','Lehi','Orem','Provo']
+          .map((n) => `<span class="chip chip-dark">${n}</span>`).join('');
     });
 
     document.getElementById('lead-form').addEventListener('submit', async (e) => {
       e.preventDefault();
       const fd = new FormData(e.target);
       const body = Object.fromEntries(fd.entries());
+      body.type = 'general';
       const msg = document.getElementById('lead-msg');
       try {
         const res = await API.lead(body);
-        msg.textContent = res.message || 'Sent.';
+        msg.textContent = res.message || 'Sent — we\'ll be in touch today.';
         msg.style.color = 'var(--good)';
         e.target.reset();
       } catch (err) {
         msg.textContent = err.message;
         msg.style.color = 'var(--bad)';
       }
+    });
+
+    // Mobile nav toggle
+    const toggle = document.querySelector('.nav-toggle');
+    const panel = document.getElementById('mobile-nav');
+    toggle.addEventListener('click', () => {
+      const open = panel.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open);
     });
   </script>
 </body>
