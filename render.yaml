@@ -1,0 +1,31 @@
+# Render Blueprint — https://render.com/docs/blueprint-spec
+# Deploy: Dashboard → New → Blueprint → connect hoogguns/daylink
+services:
+  - type: web
+    name: daylink
+    runtime: node
+    plan: free
+    region: oregon
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: JWT_SECRET
+        generateValue: true
+      - key: DB_PATH
+        value: /var/data/daylink.json
+      - key: COGS_DRIVER
+        value: "20"
+      - key: COGS_SUPPLIES
+        value: "2.5"
+      - key: COGS_RISK
+        value: "1.5"
+      - key: COGS_OPS
+        value: "3"
+    # Persistent disk keeps the JSON DB across deploys (not available on free — use starter+ or accept reset)
+    # disk:
+    #   name: daylink-data
+    #   mountPath: /var/data
+    #   sizeGB: 1

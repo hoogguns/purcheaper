@@ -26,6 +26,7 @@ const orderRoutes = require('./routes/orders');
 const publicRoutes = require('./routes/public');
 
 const app = express();
+// Render (and most hosts) inject PORT; fall back for local dev
 const PORT = process.env.PORT || 3847;
 const publicDir = path.join(__dirname, '..', 'public');
 const isProd = process.env.NODE_ENV === 'production';
