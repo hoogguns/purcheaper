@@ -2,16 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0c6b6b" />
   <title>Partner with DayLink — Buyback logistics API &amp; dashboard</title>
   <meta name="description" content="Onboard your online buyback store to DayLink. Track purchased devices, dispatch trained gig drivers, verify specs, and release same-day seller payments on the Wasatch Front." />
   <link rel="stylesheet" href="/css/site.css" />
 </head>
-<body>
+<body class="partners-page">
   <header class="topbar">
     <div class="container">
-      <a class="brand" href="/"><span class="brand-mark">D</span> DayLink</a>
-      <nav class="nav-links">
+      <a class="brand" href="/"><span class="brand-mark">D</span> DayLink <span class="tag">Partners</span></a>
+      <nav class="nav-links" aria-label="Primary">
         <a href="#value">Value</a>
         <a href="#flow">Ops flow</a>
         <a href="#api">API</a>
@@ -21,6 +22,20 @@
       <div class="nav-cta">
         <a class="btn btn-ghost btn-sm" href="/">Marketing</a>
         <a class="btn btn-primary btn-sm" href="/dashboard">Dashboard</a>
+      </div>
+      <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
+        <span></span>
+      </button>
+    </div>
+    <div class="nav-panel" id="mobile-nav">
+      <a href="#value">Value</a>
+      <a href="#flow">Ops flow</a>
+      <a href="#api">API</a>
+      <a href="#pricing">Pilot plans</a>
+      <a href="#signup">Sign up</a>
+      <div class="nav-panel-cta">
+        <a class="btn btn-primary" href="/dashboard">Open dashboard</a>
+        <a class="btn btn-ghost" href="/">Marketing home</a>
       </div>
     </div>
   </header>
@@ -259,6 +274,7 @@ Content-Type: application/json
   </footer>
 
   <script src="/js/api.js"></script>
+  <script src="/js/site.js"></script>
   <script>
     API.coverage().then((c) => {
       document.getElementById('cities').innerHTML = (c.cities || [])
