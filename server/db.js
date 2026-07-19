@@ -342,7 +342,7 @@ function createDb() {
       partner_name: p ? p.company_name : null,
       driver_name: d ? d.name : null,
       driver_phone: d ? d.phone : null,
-      driver_roadie_id: d ? d.roadie_id : null,
+      driver_code: d ? d.driver_code : null,
     };
   }
 
@@ -371,11 +371,11 @@ function createDb() {
     if (/SELECT \* FROM drivers WHERE email = \?/i.test(sql)) {
       return data.drivers.find((d) => d.email === params[0]) || undefined;
     }
-    if (/SELECT id, name, email, phone, vehicle, zones, rating, status, roadie_id, trained, created_at\s+FROM drivers WHERE id = \?/i.test(sql)) {
+    if (/SELECT id, name, email, phone, vehicle, zones, rating, status, driver_code, trained, created_at\s+FROM drivers WHERE id = \?/i.test(sql)) {
       const d = data.drivers.find((x) => x.id === params[0]);
       if (!d) return undefined;
-      const { id, name, email, phone, vehicle, zones, rating, status, roadie_id, trained, created_at } = d;
-      return { id, name, email, phone, vehicle, zones, rating, status, roadie_id, trained, created_at };
+      const { id, name, email, phone, vehicle, zones, rating, status, driver_code, trained, created_at } = d;
+      return { id, name, email, phone, vehicle, zones, rating, status, driver_code, trained, created_at };
     }
     if (/FROM orders o[\s\S]*WHERE o\.id = \?/i.test(sql) || /WHERE o\.id = \?/i.test(sql)) {
       const o = data.orders.find((x) => x.id === params[0]);
@@ -457,7 +457,7 @@ function createDb() {
           zones: d.zones,
           rating: d.rating,
           status: d.status,
-          roadie_id: d.roadie_id,
+          driver_code: d.driver_code,
           trained: d.trained,
         }));
     }

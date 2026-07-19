@@ -119,7 +119,7 @@ function getOrderById(id) {
               p.company_name AS partner_name,
               d.name AS driver_name,
               d.phone AS driver_phone,
-              d.roadie_id AS driver_roadie_id
+              d.driver_code AS driver_code
        FROM orders o
        LEFT JOIN partners p ON p.id = o.partner_id
        LEFT JOIN drivers d ON d.id = o.driver_id

@@ -57,7 +57,7 @@ const drivers = [
     zones: JSON.stringify(['Salt Lake City', 'Murray', 'West Valley']),
     rating: 4.97,
     status: 'available',
-    roadie_id: 'RD-88421',
+    driver_code: 'DL-88421',
     trained: 1,
   },
   {
@@ -70,7 +70,7 @@ const drivers = [
     zones: JSON.stringify(['Provo', 'Orem', 'Lehi']),
     rating: 4.92,
     status: 'available',
-    roadie_id: 'RD-77103',
+    driver_code: 'DL-77103',
     trained: 1,
   },
   {
@@ -83,7 +83,7 @@ const drivers = [
     zones: JSON.stringify(['Ogden', 'Layton', 'Bountiful']),
     rating: 4.88,
     status: 'busy',
-    roadie_id: 'RD-55219',
+    driver_code: 'DL-55219',
     trained: 1,
   },
 ];
@@ -93,8 +93,8 @@ const insertPartner = db.prepare(`
   VALUES (@id, @company_name, @contact_name, @email, @password_hash, @phone, @website, @api_key, @plan)
 `);
 const insertDriver = db.prepare(`
-  INSERT INTO drivers (id, name, email, phone, password_hash, vehicle, zones, rating, status, roadie_id, trained)
-  VALUES (@id, @name, @email, @phone, @password_hash, @vehicle, @zones, @rating, @status, @roadie_id, @trained)
+  INSERT INTO drivers (id, name, email, phone, password_hash, vehicle, zones, rating, status, driver_code, trained)
+  VALUES (@id, @name, @email, @phone, @password_hash, @vehicle, @zones, @rating, @status, @driver_code, @trained)
 `);
 const insertOrder = db.prepare(`
   INSERT INTO orders (

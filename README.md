@@ -4,7 +4,7 @@
 
 Pilot market: **Salt Lake City metro — Wasatch Front (Ogden → Salt Lake City → Provo), Utah.**
 
-DayLink connects cell phone / device buyback websites with sellers at home via trained gig-economy drivers (e.g. Roadie-class capacity). Drivers verify the device against the buyback site’s quoted specs, pack it to SOP, and unlock **same-day seller payment** when everything matches — a competitive edge in a crowded mail-in market.
+DayLink connects cell phone / device buyback websites with sellers at home via trained gig-economy drivers. Drivers verify the device against the buyback site’s quoted specs, pack it to SOP, and unlock **same-day seller payment** when everything matches — a competitive edge in a crowded mail-in market.
 
 | Surface | URL (local) | Audience |
 |--------|-------------|----------|

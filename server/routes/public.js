@@ -59,7 +59,7 @@ router.get('/how-it-works', (_req, res) => {
       ],
       partners: [
         { step: 1, title: 'Connect your buyback flow', body: 'Create pickup orders via dashboard or API when a seller accepts a quote.' },
-        { step: 2, title: 'We dispatch a driver', body: 'Trained Roadie-style gig drivers accept buyback orders in-zone.' },
+        { step: 2, title: 'We dispatch a driver', body: 'DayLink-trained gig drivers accept buyback orders in-zone.' },
         { step: 3, title: 'On-site verify & pack', body: 'Driver checks condition, locks, power, model/storage against your specs and packs the device.' },
         { step: 4, title: 'Pay with confidence', body: 'Match = same-day seller payment. Mismatch = you review before funds move.' },
       ],

@@ -194,7 +194,7 @@ router.get('/partner/drivers', requirePartner, (req, res) => {
   const db = getDb();
   const drivers = db
     .prepare(
-      `SELECT id, name, phone, vehicle, zones, rating, status, roadie_id, trained
+      `SELECT id, name, phone, vehicle, zones, rating, status, driver_code, trained
        FROM drivers WHERE trained = 1 ORDER BY rating DESC`
     )
     .all()

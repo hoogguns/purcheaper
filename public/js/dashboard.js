@@ -125,7 +125,7 @@
         <div class="text-sm">
           <div><strong>Seller:</strong> ${escapeHtml(order.seller_name)} · ${escapeHtml(order.seller_phone)}</div>
           <div><strong>Pickup:</strong> ${escapeHtml(order.pickup_address)}, ${escapeHtml(order.pickup_city)} ${escapeHtml(order.pickup_zip)}</div>
-          <div><strong>Driver:</strong> ${escapeHtml(order.driver_name || 'Unassigned')} ${order.driver_roadie_id ? '(' + escapeHtml(order.driver_roadie_id) + ')' : ''}</div>
+          <div><strong>Driver:</strong> ${escapeHtml(order.driver_name || 'Unassigned')} ${order.driver_code ? '(' + escapeHtml(order.driver_code) + ')' : ''}</div>
           <div><strong>IMEI:</strong> <span class="mono">${escapeHtml(order.imei || '—')}</span></div>
           <div><strong>Packed:</strong> ${order.packed ? 'Yes' : 'No'} · <strong>Paid:</strong> ${order.paid ? 'Yes @ ' + fmtWhen(order.paid_at) : 'No'}</div>
         </div>
@@ -209,7 +209,7 @@
         <td><strong>${escapeHtml(d.name)}</strong><div class="muted">${escapeHtml(d.phone || '')}</div></td>
         <td>${(d.zones || []).map((z) => `<span class="chip">${escapeHtml(z)}</span>`).join(' ')}</td>
         <td>${escapeHtml(d.vehicle || '—')}</td>
-        <td class="mono">${escapeHtml(d.roadie_id || '—')}</td>
+        <td class="mono">${escapeHtml(d.driver_code || '—')}</td>
         <td>${d.rating}</td>
         <td>${statusChip(d.status)}</td>
       </tr>`

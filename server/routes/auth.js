@@ -92,7 +92,7 @@ router.post('/driver/login', (req, res) => {
       zones: JSON.parse(driver.zones || '[]'),
       rating: driver.rating,
       status: driver.status,
-      roadie_id: driver.roadie_id,
+      driver_code: driver.driver_code,
       trained: !!driver.trained,
     },
   });
@@ -114,7 +114,7 @@ router.get('/driver/me', requireAuth('driver'), (req, res) => {
   const db = getDb();
   const driver = db
     .prepare(
-      `SELECT id, name, email, phone, vehicle, zones, rating, status, roadie_id, trained, created_at
+      `SELECT id, name, email, phone, vehicle, zones, rating, status, driver_code, trained, created_at
        FROM drivers WHERE id = ?`
     )
     .get(req.user.id);

@@ -22,7 +22,7 @@
     const u = API.getUser('driver');
     if (u) {
       $('#d-name').textContent = u.name || 'Driver';
-      $('#d-meta').textContent = `${u.roadie_id || ''} · ★ ${u.rating || '—'} · ${(u.zones || []).join(', ')}`;
+      $('#d-meta').textContent = `${u.driver_code || ''} · ★ ${u.rating || '—'} · ${(u.zones || []).join(', ')}`;
     }
   }
 
