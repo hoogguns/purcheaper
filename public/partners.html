@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Partner with DayLink — Buyback logistics API &amp; dashboard</title>
+  <meta name="description" content="Onboard your online buyback store to DayLink. Track purchased devices, dispatch trained gig drivers, verify specs, and release same-day seller payments on the Wasatch Front." />
+  <link rel="stylesheet" href="/css/site.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="container">
+      <a class="brand" href="/"><span class="brand-mark">D</span> DayLink</a>
+      <nav class="nav-links">
+        <a href="#value">Value</a>
+        <a href="#flow">Ops flow</a>
+        <a href="#api">API</a>
+        <a href="#pricing">Pilot plans</a>
+        <a href="#signup">Sign up</a>
+      </nav>
+      <div class="nav-cta">
+        <a class="btn btn-ghost btn-sm" href="/">Marketing</a>
+        <a class="btn btn-primary btn-sm" href="/dashboard">Dashboard</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <span class="chip chip-brand">For buyback website owners</span>
+        <h1>Turn every purchase into a tracked, same-day pickup.</h1>
+        <p class="lede">
+          Your competitive advantage is cash speed. DayLink is the logistics + verification layer
+          that lets you promise <strong>same-day payment</strong> in Salt Lake City’s Wasatch corridor
+          without hiring a private courier fleet.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#signup">Create partner account</a>
+          <a class="btn btn-ghost" href="/dashboard">Login to dashboard</a>
+        </div>
+        <div class="proof-row">
+          <div class="proof"><strong>Track SKUs</strong><span>Every purchased device</span></div>
+          <div class="proof"><strong>Verify on door</strong><span>Before you pay</span></div>
+          <div class="proof"><strong>Gig scale</strong><span>Roadie-class capacity</span></div>
+          <div class="proof"><strong>API</strong><span>Hook into buy flow</span></div>
+        </div>
+      </div>
+      <aside class="card" style="align-self:stretch;display:flex;flex-direction:column;gap:.7rem">
+        <div class="row between">
+          <h3>Status machine</h3>
+          <span class="chip chip-info">Partner-visible</span>
+        </div>
+        <div class="stack text-sm">
+          <div class="row between"><span class="chip chip-warn">pending</span><span>Awaiting driver claim</span></div>
+          <div class="row between"><span class="chip chip-info">assigned / en_route</span><span>Driver moving</span></div>
+          <div class="row between"><span class="chip chip-brand">picked_up</span><span>Device in hand</span></div>
+          <div class="row between"><span class="chip chip-good">verified</span><span>Eligible for same-day pay</span></div>
+          <div class="row between"><span class="chip chip-good">paid</span><span>Seller funded</span></div>
+          <div class="row between"><span class="chip chip-bad">mismatch</span><span>Hold funds · review</span></div>
+        </div>
+        <p class="text-sm text-muted" style="margin-top:auto">Demo login: <span class="mono">partner@wasatchbuyback.demo</span> / <span class="mono">demo1234</span></p>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section" id="value">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2>What you get in one surface</h2>
+          <p>No empty hero whitespace — every panel maps to an ops job.</p>
+        </div>
+      </div>
+      <div class="grid-3">
+        <article class="card accent-border">
+          <h3>Purchase tracker</h3>
+          <p>Search by seller, model, IMEI, external ref. Filter by status. See quoted amount and city at a glance.</p>
+        </article>
+        <article class="card accent-border">
+          <h3>Same-day pay gate</h3>
+          <p>Payment action only when verification_match is true. Mismatches never auto-pay.</p>
+        </article>
+        <article class="card accent-border">
+          <h3>Driver assignment</h3>
+          <p>Auto-claim from trained pool or assign by zone (north / central / south Wasatch).</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="flow">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2>Ops flow end-to-end</h2>
+          <p>From your buyback cart to seller bank account — still inside one business day.</p>
+        </div>
+      </div>
+      <div class="grid-4">
+        <article class="card"><div class="icon">1</div><h3>Quote won</h3><p>Seller accepts online. Your system creates a DayLink order with expected_specs + payout amount.</p></article>
+        <article class="card"><div class="icon">2</div><h3>Driver claim</h3><p>Trained gig driver accepts the buyback job (Roadie-style dispatch + DayLink SOP).</p></article>
+        <article class="card"><div class="icon">3</div><h3>Doorstep verify</h3><p>Power-on, locks, model/storage/condition checked. Packed to your rules.</p></article>
+        <article class="card"><div class="icon">4</div><h3>Pay same day</h3><p>Match → you release ACH/push pay. Device continues to your facility.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="api">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2>API snapshot</h2>
+          <p>Use JWT after login or permanent <span class="mono">X-API-Key</span> from the dashboard.</p>
+        </div>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <h3 class="mb-1">Create pickup</h3>
+          <pre class="mono text-sm" style="white-space:pre-wrap;background:var(--canvas);padding:.7rem;border-radius:8px;margin:0;line-height:1.4">POST /api/partner/orders
+X-API-Key: dl_live_…
+Content-Type: application/json
+
+{
+  "external_ref": "ORDER-1001",
+  "seller_name": "Taylor Brooks",
+  "seller_phone": "801-555-1101",
+  "pickup_address": "1420 E 2100 S",
+  "pickup_city": "Salt Lake City",
+  "pickup_zip": "84106",
+  "device_brand": "Apple",
+  "device_model": "iPhone 14 Pro",
+  "device_storage": "256GB",
+  "device_condition": "Good",
+  "quoted_amount": 420,
+  "expected_specs": {
+    "brand": "Apple",
+    "model": "iPhone 14 Pro",
+    "storage": "256GB",
+    "powers_on": true,
+    "icloud_locked": false
+  }
+}</pre>
+        </div>
+        <div class="card stack">
+          <h3>Key endpoints</h3>
+          <ul class="list-tight">
+            <li><span class="mono">POST /api/auth/partner/login</span></li>
+            <li><span class="mono">GET /api/partner/orders</span></li>
+            <li><span class="mono">GET /api/partner/orders/:id</span></li>
+            <li><span class="mono">POST /api/partner/orders/:id/pay</span></li>
+            <li><span class="mono">POST /api/partner/orders/:id/assign</span></li>
+            <li><span class="mono">GET /api/partner/stats</span></li>
+            <li><span class="mono">GET /api/coverage</span></li>
+          </ul>
+          <p class="text-sm text-muted">Full interactive dashboard ships with the same API — no second source of truth.</p>
+          <a class="btn btn-soft btn-sm" href="/dashboard">Try with demo data</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="pricing">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2>Pilot plans (Wasatch)</h2>
+          <p>Simple packaging for the test market. Volume pricing negotiable.</p>
+        </div>
+      </div>
+      <div class="grid-3">
+        <article class="card">
+          <span class="chip">Pilot</span>
+          <h3 class="mt-1">Starter</h3>
+          <p class="text-sm text-muted">Validate same-day conversion lift</p>
+          <p class="mt-1"><strong style="font-size:1.4rem">Per-pickup fee</strong></p>
+          <ul class="list-tight">
+            <li>Dashboard access</li>
+            <li>Up to 50 pickups / mo</li>
+            <li>Email support</li>
+          </ul>
+        </article>
+        <article class="card accent-border">
+          <span class="chip chip-brand">Popular</span>
+          <h3 class="mt-1">Growth</h3>
+          <p class="text-sm text-muted">API + priority dispatch windows</p>
+          <p class="mt-1"><strong style="font-size:1.4rem">Volume tier</strong></p>
+          <ul class="list-tight">
+            <li>API key + webhooks*</li>
+            <li>Zone priority</li>
+            <li>Mismatch review SLAs</li>
+          </ul>
+        </article>
+        <article class="card">
+          <span class="chip chip-accent">Custom</span>
+          <h3 class="mt-1">Network</h3>
+          <p class="text-sm text-muted">Multi-brand buyback groups</p>
+          <p class="mt-1"><strong style="font-size:1.4rem">Contract</strong></p>
+          <ul class="list-tight">
+            <li>Dedicated success</li>
+            <li>Custom packing SOP</li>
+            <li>Expansion markets</li>
+          </ul>
+        </article>
+      </div>
+      <p class="text-sm text-muted mt-1">*Webhooks marked for production hardening; REST polling works today.</p>
+    </div>
+  </section>
+
+  <section class="section" id="signup">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2>Create your partner account</h2>
+          <p>Instant dashboard access for the SLC pilot. Wire the API when you’re ready.</p>
+        </div>
+      </div>
+      <div class="grid-2">
+        <form class="card stack" id="reg-form">
+          <div id="reg-alert" class="hidden"></div>
+          <div class="form-grid">
+            <label class="field full">Company name
+              <input name="company_name" required placeholder="Wasatch Device Buyback" />
+            </label>
+            <label class="field">Contact name
+              <input name="contact_name" required placeholder="Alex Rivera" />
+            </label>
+            <label class="field">Work email
+              <input name="email" type="email" required placeholder="ops@yourbuyback.com" />
+            </label>
+            <label class="field">Phone
+              <input name="phone" placeholder="801-555-0100" />
+            </label>
+            <label class="field">Website
+              <input name="website" placeholder="https://" />
+            </label>
+            <label class="field full">Password (min 8)
+              <input name="password" type="password" required minlength="8" />
+            </label>
+          </div>
+          <button class="btn btn-primary" type="submit">Create account &amp; open dashboard</button>
+        </form>
+        <div class="card">
+          <h3>Coverage reminder</h3>
+          <p>Pilot market is <strong>Ogden → Salt Lake City → Provo</strong>. Sellers outside the corridor can still be captured as leads for expansion.</p>
+          <div class="city-cloud mt-1" id="cities"></div>
+          <h3 class="mt-1">Already registered?</h3>
+          <a class="btn btn-ghost btn-sm mt-1" href="/dashboard">Go to partner login</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-bottom" style="border:0;padding:0">
+      <span>© DayLink · <a href="https://github.com/hoogguns/daylink">hoogguns/daylink</a></span>
+      <a href="/">← Marketing home</a>
+    </div>
+  </footer>
+
+  <script src="/js/api.js"></script>
+  <script>
+    API.coverage().then((c) => {
+      document.getElementById('cities').innerHTML = (c.cities || [])
+        .map((x) => `<span class="chip">${x.name}</span>`).join('');
+    }).catch(() => {});
+
+    document.getElementById('reg-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const body = Object.fromEntries(new FormData(e.target).entries());
+      const alert = document.getElementById('reg-alert');
+      try {
+        const res = await API.partnerRegister(body);
+        API.setSession('partner', res.token, res.partner);
+        alert.className = 'alert alert-ok';
+        alert.textContent = 'Account created — redirecting…';
+        alert.classList.remove('hidden');
+        location.href = '/dashboard';
+      } catch (err) {
+        alert.className = 'alert alert-error';
+        alert.textContent = err.message;
+        alert.classList.remove('hidden');
+      }
+    });
+  </script>
+</body>
+</html>

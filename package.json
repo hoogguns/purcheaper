@@ -1,0 +1,41 @@
+{
+  "name": "daylink",
+  "version": "1.0.0",
+  "description": "Same-day device pickup logistics for online buyback stores — Wasatch Front (Ogden–Salt Lake City–Provo)",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "nodemon server/index.js",
+    "seed": "node server/seed.js",
+    "db:reset": "node server/seed.js --reset"
+  },
+  "keywords": [
+    "logistics",
+    "buyback",
+    "same-day",
+    "device-pickup",
+    "wasatch",
+    "salt-lake-city"
+  ],
+  "author": "hoogguns",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hoogguns/daylink.git"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "morgan": "^1.10.0",
+    "uuid": "^11.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
