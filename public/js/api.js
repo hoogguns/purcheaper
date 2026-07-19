@@ -3,10 +3,10 @@ const API = {
   base: '',
 
   tokenKey(role) {
-    return role === 'driver' ? 'daylink_driver_token' : 'daylink_partner_token';
+    return role === 'driver' ? 'PurCheaper_driver_token' : 'PurCheaper_partner_token';
   },
   userKey(role) {
-    return role === 'driver' ? 'daylink_driver_user' : 'daylink_partner_user';
+    return role === 'driver' ? 'PurCheaper_driver_user' : 'PurCheaper_partner_user';
   },
 
   getToken(role = 'partner') {

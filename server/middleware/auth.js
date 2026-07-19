@@ -1,7 +1,7 @@
 const jwt = require('jsonwebtoken');
 const { getDb } = require('../db');
 
-const JWT_SECRET = process.env.JWT_SECRET || 'daylink-dev-secret-change-in-production';
+const JWT_SECRET = process.env.JWT_SECRET || 'PurCheaper-dev-secret-change-in-production';
 
 function signToken(payload, expiresIn = '7d') {
   return jwt.sign(payload, JWT_SECRET, { expiresIn });

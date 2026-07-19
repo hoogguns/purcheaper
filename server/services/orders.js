@@ -396,7 +396,7 @@ function inMonth(iso, key) {
 }
 
 /**
- * Live billing + DayLink contribution for a partner account (current month).
+ * Live billing + PurCheaper contribution for a partner account (current month).
  * Completed pickup = device reached picked_up / verifying / verified / paid / mismatch
  * (cancelled & pending/assigned/en_route not billable yet).
  */
@@ -448,10 +448,10 @@ function partnerEconomics(partnerId) {
       quoted_volume: monthOrders.reduce((s, o) => s + Number(o.quoted_amount || 0), 0),
     },
     partner_invoice: invoice,
-    daylink_profit: {
+    platform_profit: {
       ...operator,
       note:
-        'Estimated DayLink contribution on this partner’s volume: invoice revenue minus assumed Wasatch COGS (driver, supplies, risk, ops).',
+        'Estimated PurCheaper contribution on this partner’s volume: invoice revenue minus assumed Wasatch COGS (driver, supplies, risk, ops).',
     },
     rates: {
       plans: PLANS,

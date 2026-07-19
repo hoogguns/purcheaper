@@ -50,7 +50,7 @@ const drivers = [
   {
     id: uuid(),
     name: 'Sam Ortiz',
-    email: 'sam.driver@daylink.demo',
+    email: 'sam.driver@PurCheaper.demo',
     phone: '801-555-0201',
     password_hash: hash('driver1234'),
     vehicle: 'Honda Civic 2019',
@@ -63,7 +63,7 @@ const drivers = [
   {
     id: uuid(),
     name: 'Mia Chen',
-    email: 'mia.driver@daylink.demo',
+    email: 'mia.driver@PurCheaper.demo',
     phone: '801-555-0202',
     password_hash: hash('driver1234'),
     vehicle: 'Toyota Corolla 2021',
@@ -76,7 +76,7 @@ const drivers = [
   {
     id: uuid(),
     name: 'Chris Nguyen',
-    email: 'chris.driver@daylink.demo',
+    email: 'chris.driver@PurCheaper.demo',
     phone: '801-555-0203',
     password_hash: hash('driver1234'),
     vehicle: 'Ford Escape 2020',
@@ -386,14 +386,14 @@ const seed = db.transaction(() => {
 
 seed();
 
-console.log('DayLink seed complete.');
+console.log('PurCheaper seed complete.');
 console.log('');
 console.log('Demo partner login:');
 console.log('  Email:    partner@wasatchbuyback.demo');
 console.log('  Password: demo1234');
 console.log('');
 console.log('Demo driver login:');
-console.log('  Email:    sam.driver@daylink.demo');
+console.log('  Email:    sam.driver@PurCheaper.demo');
 console.log('  Password: driver1234');
 console.log('');
 console.log('Partner API key (Wasatch Device Buyback):');

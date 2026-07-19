@@ -1,10 +1,10 @@
-# DayLink
+# PurCheaper
 
 **Same-day device pickup logistics for online buyback stores.**
 
 Pilot market: **Salt Lake City metro — Wasatch Front (Ogden → Salt Lake City → Provo), Utah.**
 
-DayLink connects cell phone / device buyback websites with sellers at home via trained gig-economy drivers. Drivers verify the device against the buyback site’s quoted specs, pack it to SOP, and unlock **same-day seller payment** when everything matches — a competitive edge in a crowded mail-in market.
+PurCheaper connects cell phone / device buyback websites with sellers at home via trained gig-economy drivers. Drivers verify the device against the buyback site’s quoted specs, pack it to SOP, and unlock **same-day seller payment** when everything matches — a competitive edge in a crowded mail-in market.
 
 | Surface | URL (local) | Audience |
 |--------|-------------|----------|
@@ -21,7 +21,7 @@ DayLink connects cell phone / device buyback websites with sellers at home via t
 
 - **Buyback sites** need faster cash-to-seller without taking on blind fraud risk.
 - **Sellers** abandon quotes when payout is “7–14 days after we receive the phone.”
-- **DayLink** inserts doorstep verification + packing so payment can fire the same day **only after a match**.
+- **PurCheaper** inserts doorstep verification + packing so payment can fire the same day **only after a match**.
 
 ## Stack
 
@@ -45,7 +45,7 @@ Open http://localhost:3847
 | Role | Email | Password |
 |------|-------|----------|
 | Partner | `partner@wasatchbuyback.demo` | `demo1234` |
-| Driver | `sam.driver@daylink.demo` | `driver1234` |
+| Driver | `sam.driver@PurCheaper.demo` | `driver1234` |
 
 Reset demo data:
 
@@ -84,7 +84,7 @@ GET  /api/pricing
 
 Authenticate with `Authorization: Bearer <token>` or `X-API-Key: dl_live_…`.
 
-## How DayLink makes money
+## How PurCheaper makes money
 
 Partners pay **platform + per completed pickup** (see `/partners#pricing`).  
 Your cost is mainly **driver + pack kit + risk + ops** (~$27 default; override with `COGS_*` env vars).  
@@ -120,7 +120,7 @@ POST /api/leads
 ## Project layout
 
 ```
-daylink/
+PurCheaper/
   server/           Express API, SQLite, seed
   public/           Marketing + partner + driver UIs
   data/             SQLite DB (gitignored)
@@ -132,7 +132,7 @@ daylink/
 
 - **State:** Utah  
 - **Corridor:** Ogden · Layton · Bountiful · Salt Lake City · Murray · Sandy · Draper · Lehi · Orem · Provo  
-- **Model:** Gig drivers + DayLink buyback training (packing, locks, condition grades)
+- **Model:** Gig drivers + PurCheaper buyback training (packing, locks, condition grades)
 
 ## Repo
 

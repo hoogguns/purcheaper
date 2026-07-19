@@ -1,6 +1,6 @@
 /**
- * Wasatch pilot pricing + estimated DayLink COGS.
- * Partner fee = DayLink revenue. COGS = driver + supplies + risk reserve.
+ * Wasatch pilot pricing + estimated PurCheaper COGS.
+ * Partner fee = PurCheaper revenue. COGS = driver + supplies + risk reserve.
  */
 const PLANS = {
   starter: {
@@ -41,7 +41,7 @@ const PLANS = {
   },
 };
 
-/** Estimated fully loaded cost to DayLink per completed pickup (Wasatch, nearby parcel drop). */
+/** Estimated fully loaded cost to PurCheaper per completed pickup (Wasatch, nearby parcel drop). */
 const COGS = {
   driver: Number(process.env.COGS_DRIVER || 20),
   supplies: Number(process.env.COGS_SUPPLIES || 2.5),

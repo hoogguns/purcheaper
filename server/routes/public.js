@@ -30,7 +30,7 @@ const COVERAGE = {
 router.get('/health', (_req, res) => {
   res.json({
     ok: true,
-    service: 'daylink',
+    service: 'purcheaper',
     market: COVERAGE.market,
     version: '1.1.0',
     env: process.env.NODE_ENV || 'development',
@@ -73,17 +73,17 @@ router.get('/stats', (_req, res) => {
 
 router.get('/how-it-works', (_req, res) => {
   res.json({
-    title: 'How DayLink works',
+    title: 'How PurCheaper works',
     audiences: {
       sellers: [
         { step: 1, title: 'Sell online', body: 'Get a quote from your preferred online buyback store.' },
-        { step: 2, title: 'Book pickup', body: 'Choose DayLink same-day pickup for the Wasatch Front.' },
+        { step: 2, title: 'Book pickup', body: 'Choose PurCheaper same-day pickup for the Wasatch Front.' },
         { step: 3, title: 'Hand off at home', body: 'A trained gig driver arrives at your door.' },
         { step: 4, title: 'Get paid same day', body: 'After the device matches the quote specs, payment releases the same day.' },
       ],
       partners: [
         { step: 1, title: 'Connect your buyback flow', body: 'Create pickup orders via dashboard or API when a seller accepts a quote.' },
-        { step: 2, title: 'We dispatch a driver', body: 'DayLink-trained gig drivers accept buyback orders in-zone.' },
+        { step: 2, title: 'We dispatch a driver', body: 'PurCheaper-trained gig drivers accept buyback orders in-zone.' },
         { step: 3, title: 'On-site verify & pack', body: 'Driver checks condition, locks, power, model/storage against your specs and packs the device.' },
         { step: 4, title: 'Pay with confidence', body: 'Match = same-day seller payment. Mismatch = you review before funds move.' },
       ],

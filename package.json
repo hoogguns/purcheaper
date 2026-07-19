@@ -1,5 +1,5 @@
 {
-  "name": "daylink",
+  "name": "purcheaper",
   "version": "1.0.0",
   "description": "Same-day device pickup logistics for online buyback stores — Wasatch Front (Ogden–Salt Lake City–Provo)",
   "main": "server/index.js",

@@ -65,7 +65,7 @@
     try {
       const e = await API.partnerEconomics();
       const inv = e.partner_invoice;
-      const prof = e.daylink_profit;
+      const prof = e.platform_profit;
       const act = e.activity;
 
       if ($('#profit-period')) $('#profit-period').textContent = e.period_label || e.period;
@@ -93,7 +93,7 @@
       // Economics tab live block
       if ($('#e-live-invoice')) {
         $('#e-live-invoice').textContent = money2(inv.total);
-        $('#e-live-invoice-sub').textContent = `What this partner pays DayLink (${inv.plan.name})`;
+        $('#e-live-invoice-sub').textContent = `What this partner pays PurCheaper (${inv.plan.name})`;
         $('#e-live-profit').textContent = money2(prof.contribution);
         $('#e-live-profit').style.color = prof.contribution >= 0 ? 'var(--good)' : 'var(--bad)';
         $('#e-live-profit-sub').textContent = 'Your platform profit on their volume (est.)';
@@ -107,7 +107,7 @@
           row('Same-day fees', money2(inv.same_day_fees)),
           row('Partner invoice total', money2(inv.total)),
           row('Est. COGS (driver+kit+risk+ops)', money2(prof.cogs_total), money2(prof.cogs_per_pickup) + ' each'),
-          row('DayLink contribution', money2(prof.contribution)),
+          row('PurCheaper contribution', money2(prof.contribution)),
         ].join('');
       }
       return e;
@@ -372,7 +372,7 @@
       row('Platform fee / mo', money(plan.monthly)),
       row('Pickup fees / mo', money(pickupFees), `${pickups} × ${money(plan.perPickup)}`),
       row('Same-day pay fees / mo', money(Math.round(sameDayFees)), plan.sameDayIncluded ? 'Included on Growth/Network' : `${Math.round(sameDayCount)} × ${money(plan.sameDayFee)}`),
-      row('Total DayLink cost / mo', money(Math.round(monthlyFees))),
+      row('Total PurCheaper cost / mo', money(Math.round(monthlyFees))),
       row('Blended cost / pickup', money(Math.round(cpp))),
       row('Baseline monthly closes', String(baseline)),
       row('Conversion lift', `${(liftPct * 100).toFixed(1)}%` ),
@@ -380,7 +380,7 @@
       row('Avg quote × margin', `${money(avgQuote)} × ${(marginPct * 100).toFixed(0)}%`),
       row('Mismatch / non-pay rate', `${(mismatchPct * 100).toFixed(1)}%`, 'Applied to incremental GP only'),
       row('Incremental gross profit', money(Math.round(incrementalGp))),
-      row('Net after DayLink', money(Math.round(net))),
+      row('Net after PurCheaper', money(Math.round(net))),
     ].join('');
 
     const sameDayLine = plan.sameDayIncluded
@@ -401,7 +401,7 @@
         : '';
     if (net >= 0) {
       $('#econ-verdict').textContent =
-        `At these assumptions, same-day via DayLink adds ~${money(Math.round(net))}/mo after fees (${money(Math.round(cpp))} blended per pickup).${capNote}`;
+        `At these assumptions, same-day via PurCheaper adds ~${money(Math.round(net))}/mo after fees (${money(Math.round(cpp))} blended per pickup).${capNote}`;
       $('#econ-verdict').style.color = 'var(--good)';
     } else {
       $('#econ-verdict').textContent =

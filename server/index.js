@@ -105,7 +105,7 @@ app.use((err, _req, res, _next) => {
 
 app.listen(PORT, () => {
   console.log('');
-  console.log('  DayLink — same-day device buyback logistics');
+  console.log('  PurCheaper — same-day device buyback logistics');
   console.log(`  Market:  Ogden → Salt Lake City → Provo`);
   console.log(`  Mode:    ${process.env.NODE_ENV || 'development'}`);
   console.log(`  Local:   http://localhost:${PORT}`);

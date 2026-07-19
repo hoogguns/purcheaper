@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const DB_PATH = process.env.DB_PATH || path.join(__dirname, '..', 'data', 'daylink.json');
+const DB_PATH = process.env.DB_PATH || path.join(__dirname, '..', 'data', 'purcheaper.json');
 
 const EMPTY = () => ({
   partners: [],
