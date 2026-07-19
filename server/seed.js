@@ -50,7 +50,7 @@ const drivers = [
   {
     id: uuid(),
     name: 'Sam Ortiz',
-    email: 'sam.driver@PurCheaper.demo',
+    email: 'sam.driver@purcheaper.demo',
     phone: '801-555-0201',
     password_hash: hash('driver1234'),
     vehicle: 'Honda Civic 2019',
@@ -63,7 +63,7 @@ const drivers = [
   {
     id: uuid(),
     name: 'Mia Chen',
-    email: 'mia.driver@PurCheaper.demo',
+    email: 'mia.driver@purcheaper.demo',
     phone: '801-555-0202',
     password_hash: hash('driver1234'),
     vehicle: 'Toyota Corolla 2021',
@@ -76,7 +76,7 @@ const drivers = [
   {
     id: uuid(),
     name: 'Chris Nguyen',
-    email: 'chris.driver@PurCheaper.demo',
+    email: 'chris.driver@purcheaper.demo',
     phone: '801-555-0203',
     password_hash: hash('driver1234'),
     vehicle: 'Ford Escape 2020',
@@ -393,7 +393,7 @@ console.log('  Email:    partner@wasatchbuyback.demo');
 console.log('  Password: demo1234');
 console.log('');
 console.log('Demo driver login:');
-console.log('  Email:    sam.driver@PurCheaper.demo');
+console.log('  Email:    sam.driver@purcheaper.demo');
 console.log('  Password: driver1234');
 console.log('');
 console.log('Partner API key (Wasatch Device Buyback):');

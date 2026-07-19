@@ -45,7 +45,7 @@ Open http://localhost:3847
 | Role | Email | Password |
 |------|-------|----------|
 | Partner | `partner@wasatchbuyback.demo` | `demo1234` |
-| Driver | `sam.driver@PurCheaper.demo` | `driver1234` |
+| Driver | `sam.driver@purcheaper.demo` | `driver1234` |
 
 Reset demo data:
 

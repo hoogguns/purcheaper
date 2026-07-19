@@ -76,17 +76,23 @@ router.post('/driver/login', (req, res) => {
   const { email, password } = req.body || {};
   if (!email || !password) return res.status(400).json({ error: 'email and password required' });
   const db = getDb();
-  const driver = db.prepare('SELECT * FROM drivers WHERE email = ?').get(email.toLowerCase());
+  const emailNorm = String(email).trim().toLowerCase();
+  const driver = db.prepare('SELECT * FROM drivers WHERE email = ?').get(emailNorm);
   if (!driver || !bcrypt.compareSync(password, driver.password_hash)) {
     return res.status(401).json({ error: 'Invalid credentials' });
   }
-  const token = signToken({ role: 'driver', id: driver.id, email: driver.email, name: driver.name });
+  const token = signToken({
+    role: 'driver',
+    id: driver.id,
+    email: String(driver.email).toLowerCase(),
+    name: driver.name,
+  });
   res.json({
     token,
     driver: {
       id: driver.id,
       name: driver.name,
-      email: driver.email,
+      email: String(driver.email).toLowerCase(),
       phone: driver.phone,
       vehicle: driver.vehicle,
       zones: JSON.parse(driver.zones || '[]'),

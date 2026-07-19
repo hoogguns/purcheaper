@@ -351,7 +351,8 @@ function createDb() {
       return { c: data.partners.length };
     }
     if (/SELECT \* FROM partners WHERE email = \?/i.test(sql)) {
-      return data.partners.find((p) => p.email === params[0]) || undefined;
+      const want = String(params[0] || '').toLowerCase();
+      return data.partners.find((p) => String(p.email || '').toLowerCase() === want) || undefined;
     }
     if (/SELECT id FROM partners WHERE email = \?/i.test(sql)) {
       const p = data.partners.find((x) => x.email === params[0]);
@@ -381,7 +382,8 @@ function createDb() {
       return { id: p.id, company_name: p.company_name, email: p.email, plan: p.plan, active: p.active };
     }
     if (/SELECT \* FROM drivers WHERE email = \?/i.test(sql)) {
-      return data.drivers.find((d) => d.email === params[0]) || undefined;
+      const want = String(params[0] || '').toLowerCase();
+      return data.drivers.find((d) => String(d.email || '').toLowerCase() === want) || undefined;
     }
     if (/SELECT id, name, email, phone, vehicle, zones, rating, status, driver_code, trained, created_at\s+FROM drivers WHERE id = \?/i.test(sql)) {
       const d = data.drivers.find((x) => x.id === params[0]);
