@@ -4,7 +4,7 @@
 
 Pilot market: **Salt Lake City metro — Wasatch Front (Ogden → Salt Lake City → Provo), Utah.**
 
-PurCheaper connects cell phone / device buyback websites with sellers at home via trained gig-economy drivers. Drivers verify the device against the buyback site’s quoted specs, pack it to SOP, and unlock **same-day seller payment** when everything matches — a competitive edge in a crowded mail-in market.
+PurCheaper connects cell phone / device buyback websites with sellers at home via trained gig-economy drivers. Drivers verify the device against the buyback site's quoted specs, pack it to SOP, and unlock **same-day seller payment** when everything matches — a competitive edge in a crowded mail-in market.
 
 | Surface | URL (local) | Audience |
 |--------|-------------|----------|
@@ -12,6 +12,7 @@ PurCheaper connects cell phone / device buyback websites with sellers at home vi
 | Partner dashboard | http://localhost:3847/dashboard | Buyback website operators |
 | Partner onboarding | http://localhost:3847/partners | New buyback partners |
 | Driver portal | http://localhost:3847/drivers | Trained gig drivers |
+| Login | http://localhost:3847/login | Partners & drivers |
 | Pricing | http://localhost:3847/partners#pricing | Partner pricing sheet |
 | Economics | http://localhost:3847/dashboard#economics | Live invoice + profit + calculator |
 | Launch checklist | http://localhost:3847/launch | Internal go-live list |
@@ -20,7 +21,7 @@ PurCheaper connects cell phone / device buyback websites with sellers at home vi
 ## Why this product
 
 - **Buyback sites** need faster cash-to-seller without taking on blind fraud risk.
-- **Sellers** abandon quotes when payout is “7–14 days after we receive the phone.”
+- **Sellers** abandon quotes when payout is "7–14 days after we receive the phone."
 - **PurCheaper** inserts doorstep verification + packing so payment can fire the same day **only after a match**.
 
 ## Stack
@@ -52,6 +53,62 @@ Reset demo data:
 ```bash
 npm run db:reset
 ```
+
+## Deploy to Production (Render)
+
+The repo includes a `render.yaml` Blueprint — Render reads it automatically.
+
+### One-time setup
+
+1. Go to **[dashboard.render.com](https://dashboard.render.com)** → sign in with GitHub
+2. Click **New → Blueprint** → select `hoogguns/purcheaper`
+3. Render detects `render.yaml` and pre-fills all settings
+4. Click **Apply** — build and deploy starts automatically
+5. Live URL: `https://purcheaper.onrender.com`
+
+### What render.yaml configures automatically
+
+| Setting | Value |
+|---------|-------|
+| Runtime | Node |
+| Build command | `npm install` |
+| Start command | `npm start` |
+| Region | Oregon |
+| Health check | `GET /api/health` |
+| `NODE_ENV` | `production` |
+| `JWT_SECRET` | Auto-generated on first deploy |
+| `DB_PATH` | `/var/data/purcheaper.json` |
+
+### Free plan notes
+
+- Service spins down after 15 min idle — ~30s cold start on first request
+- **DB resets on every redeploy** (persistent disk requires Starter plan, $7/mo)
+- Export order data before pushing updates during pilot
+
+### Enable persistent DB (when ready)
+
+Uncomment the `disk:` block in `render.yaml` and upgrade to Starter plan:
+
+```yaml
+    disk:
+      name: purcheaper-data
+      mountPath: /var/data
+      sizeGB: 1
+```
+
+### Dev → Prod workflow
+
+```
+Replit (dev)  ──git push──►  GitHub main  ──auto-deploy──►  Render (prod)
+```
+
+Every merge to `main` triggers a new Render deploy. No manual steps required.
+
+### Custom domain (optional)
+
+In Render dashboard → your service → **Settings → Custom Domains** → add your domain and point a CNAME to `purcheaper.onrender.com`.
+
+---
 
 ## Order lifecycle
 
@@ -107,7 +164,7 @@ cp .env.example .env
 npm start
 ```
 
-Public:
+Public endpoints:
 
 ```http
 GET  /api/health
@@ -124,6 +181,7 @@ PurCheaper/
   server/           Express API, SQLite, seed
   public/           Marketing + partner + driver UIs
   data/             SQLite DB (gitignored)
+  render.yaml       Render Blueprint (production)
   package.json
   README.md
 ```
@@ -133,6 +191,7 @@ PurCheaper/
 - **State:** Utah  
 - **Corridor:** Ogden · Layton · Bountiful · Salt Lake City · Murray · Sandy · Draper · Lehi · Orem · Provo  
 - **Model:** Gig drivers + PurCheaper buyback training (packing, locks, condition grades)
+- **Q4 expansion:** Las Vegas · Phoenix
 
 ## Repo
 
